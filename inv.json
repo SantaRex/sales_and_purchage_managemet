@@ -47,6 +47,24 @@
 		"id" : "number",
 		"date" : "date",
 		"amount" : "float"
+	},
+	
+	"staff" : {
+		"id" : "number",
+		"name" : "string",
+		"joining_date" : "date",
+		"date_of_birth" : "date",
+		"gender" : "string",
+		"designation" : "string",
+		"address" : {
+			"vill" : "string",
+			"post_office" : "string",
+			"police_station" : "string",
+			"district" : "string",
+			"state" : "string",
+			"mobile" : "number"
+		},
+		"salary" : "number"
 	}  
 
 }
