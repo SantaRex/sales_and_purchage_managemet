@@ -1,0 +1,52 @@
+// Inventory 
+{
+	"category" :{
+		"id" : "number",
+		"name" : "string"
+	},
+
+	"sub_category" : {
+		"id" : "number",
+		"name" : "string",
+		"category" : "number"  // category id
+	},
+
+	"product" :{
+		"id" : "number",
+		"name" : "string",
+		"category" : "number",     // category id
+		"sub_category" : "number", // sub category id
+		"mfg" : "string",
+		"gst" : "number",
+		"cgst" : "number",
+		"usage" : "string",
+		"buying_price": "float",
+		"saling_price" : "float"
+ 	},
+
+	"stock" : {
+		"id" : "number",
+		"product" : "number", // product id
+		"quantity" : "number",
+	},
+
+	"sale" : {
+		"id" : "number",
+		"product" : "number", // product id
+		"date" : "date",
+		"quantity" : "number",
+	},
+
+	"collections" : {
+		"id" : "number",
+		"date" : "date",
+		"amount" : "float"
+	},
+
+	"expenditures" : {
+		"id" : "number",
+		"date" : "date",
+		"amount" : "float"
+	}  
+
+}
