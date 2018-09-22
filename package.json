@@ -1,0 +1,23 @@
+{
+  "name": "sales_and_purchage_managemet",
+  "version": "1.0.0",
+  "description": "Sales and purchage management software for wholesale and retail shops",
+  "main": "main.js",
+  "dependencies": {
+    "electron": "^3.0.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "electron ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mofiqul/sales_and_purchage_managemet.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Mofiqul/sales_and_purchage_managemet/issues"
+  },
+  "homepage": "https://github.com/Mofiqul/sales_and_purchage_managemet#readme"
+}

@@ -10,6 +10,7 @@
 	git fetch upstream
 	git checkout master
 	git merge upstream/master
+	npm install
 	``` 
 - 6. Make changes and test
 - 7. Add all the changes ``` git add --all``` 
