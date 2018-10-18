@@ -1,0 +1,143 @@
+<!doctype html>
+<html class="no-js h-100" lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Sales and purchage management</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="./styles/bootstrap.min.css">
+    <link rel="stylesheet" id="main-stylesheet" data-version="1.1.0" href="./styles/shards-dashboards.1.1.0.min.css">
+    <link rel="stylesheet" href="styles/extras.1.1.0.min.css">
+  </head>
+  <body class="h-100">
+    
+    <div class="container-fluid">
+      <div class="row">
+        <!-- Navigation -->
+        <nav class="navbar navbar-light" style="width: 100%; background-color: #eee">
+          <div class="col-lg-12">
+            <a href="index.html" class="btn btn-secondary btn-sm">
+              <i class="material-icons">apps</i>
+              Dashboard
+            </a>
+            <a href="sale.html" class="btn btn-primary btn-sm">
+              <i class="material-icons">local_grocery_store</i>
+              Sale
+            </a>
+            <a href="master.html" style="font-weight: bolder; font-size: 25px; float: right">
+              <i class="material-icons">menu</i>
+            </a>
+          </div>  
+        </nav>
+      </div>
+      <div class="row">
+          <div class="main-content-container container-fluid px-4">
+            <!-- Page Header -->
+            <div class="page-header row no-gutters py-4">
+              <div class="col-12 col-sm-4 text-center text-sm-left mb-0">
+                <span class="text-uppercase page-subtitle">Dashboard</span>
+                <h3 class="page-title">Summery</h3>
+              </div>
+            </div>
+            <!-- End Page Header -->
+            <!-- Small Stats Blocks -->
+            <div class="row">
+              <div class="col-lg col-md-6 col-sm-6 mb-4">
+                <div class="stats-small stats-small--1 card card-small">
+                  <div class="card-body p-0 d-flex">
+                    <div class="d-flex flex-column m-auto">
+                      <div class="stats-small__data text-center">
+                        <span class="stats-small__label text-uppercase">Sale</span>
+                        <h6 class="stats-small__value count my-3">2,390</h6>
+                      </div>
+                      <div class="stats-small__data">
+                        <span class="stats-small__percentage stats-small__percentage--increase">60.7%</span>
+                      </div>
+                    </div>
+                    <canvas height="120" class="blog-overview-stats-small-1"></canvas>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg col-md-6 col-sm-6 mb-4">
+                <div class="stats-small stats-small--1 card card-small">
+                  <div class="card-body p-0 d-flex">
+                    <div class="d-flex flex-column m-auto">
+                      <div class="stats-small__data text-center">
+                        <span class="stats-small__label text-uppercase">Item</span>
+                        <h6 class="stats-small__value count my-3">182</h6>
+                      </div>
+                      <div class="stats-small__data">
+                        <span class="stats-small__percentage stats-small__percentage--increase">12.4%</span>
+                      </div>
+                    </div>
+                    <canvas height="120" class="blog-overview-stats-small-2"></canvas>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg col-md-4 col-sm-6 mb-4">
+                <div class="stats-small stats-small--1 card card-small">
+                  <div class="card-body p-0 d-flex">
+                    <div class="d-flex flex-column m-auto">
+                      <div class="stats-small__data text-center">
+                        <span class="stats-small__label text-uppercase">Expenses</span>
+                        <h6 class="stats-small__value count my-3">8,147.00</h6>
+                      </div>
+                      <div class="stats-small__data">
+                        <span class="stats-small__percentage stats-small__percentage--decrease">3.8%</span>
+                      </div>
+                    </div>
+                    <canvas height="120" class="blog-overview-stats-small-3"></canvas>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg col-md-4 col-sm-6 mb-4">
+                <div class="stats-small stats-small--1 card card-small">
+                  <div class="card-body p-0 d-flex">
+                    <div class="d-flex flex-column m-auto">
+                      <div class="stats-small__data text-center">
+                        <span class="stats-small__label text-uppercase">Staff</span>
+                        <h6 class="stats-small__value count my-3">2,413</h6>
+                      </div>
+                      <div class="stats-small__data">
+                        <span class="stats-small__percentage stats-small__percentage--increase">12.4%</span>
+                      </div>
+                    </div>
+                    <canvas height="120" class="blog-overview-stats-small-4"></canvas>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg col-md-4 col-sm-12 mb-4">
+                <div class="stats-small stats-small--1 card card-small">
+                  <div class="card-body p-0 d-flex">
+                    <div class="d-flex flex-column m-auto">
+                      <div class="stats-small__data text-center">
+                        <span class="stats-small__label text-uppercase">Collection</span>
+                        <h6 class="stats-small__value count my-3">17,281.00</h6>
+                      </div>
+                      <div class="stats-small__data">
+                        <span class="stats-small__percentage stats-small__percentage--increase">89.4%</span>
+                      </div>
+                    </div>
+                    <canvas height="120" class="blog-overview-stats-small-5"></canvas>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- End Small Stats Blocks --> 
+          </div>
+        </main>
+      </div>
+    </div>
+    
+    <script src="./scripts/jquery-3.3.1.min.js"></script>
+    <script src="./scripts/bootstrap.min.js"></script>
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>
+    <script src="https://unpkg.com/shards-ui@latest/dist/js/shards.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Sharrre/2.0.1/jquery.sharrre.min.js"></script>-->
+    <script src="./scripts/extras.1.1.0.min.js"></script>
+    <script src="./scripts/shards-dashboards.1.1.0.min.js"></script>
+    <!--<script src="scripts/app/app-blog-overview.1.1.0.js"></script>-->
+  </body>
+</html>
