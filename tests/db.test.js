@@ -36,5 +36,5 @@ test("Should return deleted id", () => {
 
 test('Should return all rows', ()=>{
 	let rows = db.selectAll('category').get();
-	expect(rows).equalTo(expect.arrayConatining([]));
+	expect(rows).toEqual([]);
 })

@@ -12,7 +12,7 @@
   "devDependencies": {},
   "scripts": {
     "start": "electron .",
-    "test" : "jest"
+    "test": "jest"
   },
   "repository": {
     "type": "git",

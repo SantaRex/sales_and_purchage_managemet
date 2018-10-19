@@ -1,5 +1,6 @@
-var sqlite3 = require('sqlite3').verbose();
 const path = require('path');
+
+var sqlite3 = require('sqlite3').verbose();
 
 const log4js = require('log4js');
 
@@ -19,9 +20,9 @@ var db = new sqlite3.Database(dbPath);
 
 var Database = function(){
 	this.sql = '';
-	var table = '';
+	this.table = '';
 	this.error;
-	var result;
+	var result = [];
 	var arrayValues = [];
 
 	this.query = (sql, values) =>{
@@ -51,7 +52,7 @@ var Database = function(){
 		return this;
 	}
 
-	this.selectAll = (table)=>{
+	this.selectAll = function(table){
 		this.sql = `SELECT * FROM ${table}`;
 		db.all(this.sql,[], (error, rows)=>{
 			if(error){
@@ -59,17 +60,19 @@ var Database = function(){
 				logger.error(error);
 				throw error;
 			}
-			result = rows;
-		})
+			rows.forEach((row)=>{
+				result.push(row);
+			});
+		});
+		console.log(result);
 		return this;
-		/*db.each(this.sql, [], (error, row)=>{
-			result.push(row);
-		})*/
 	}
 
 
+
+
+
 	this.get = ()=>{
-		console.log(result);
 		return result ? result : null;
 	}
 
@@ -111,7 +114,5 @@ var Database = function(){
 		});
 	}
 }
-
-
 
 module.exports = Database;
