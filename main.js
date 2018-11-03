@@ -104,7 +104,7 @@ ipcMain.on('sub-category-window', (event, arg) => {
     }
 })
 
-// sub category window 
+// item window 
 let itemWindow;
 ipcMain.on('item-window', (event, arg) => {
     if (arg === 1) {
@@ -128,3 +128,98 @@ ipcMain.on('item-window', (event, arg) => {
     }
 })
 
+//stock window
+let stockWindow;
+ipcMain.on('stock-window', (event, arg) => {
+    if (arg === 1) {
+        stockWindow = new BrowserWindow({
+            width: 600,
+            height: 300,
+            parent: mainWin,
+            minimizable: false,
+            maximizable: false,
+            alwaysOnTop: true,
+            resizable: false,
+        });
+
+        stockWindow.setMenu(null);
+
+        stockWindow.loadFile('./views/stock.html');
+
+        stockWindow.on('closed', () => {
+            stockWindow = null
+        });
+    }
+});
+
+//collection window
+let collectionWindow;
+ipcMain.on('collection-window', (event, arg) => {
+    if (arg === 1) {
+        collectionWindow = new BrowserWindow({
+            width: 600,
+            height: 300,
+            parent: mainWin,
+            minimizable: false,
+            maximizable: false,
+            alwaysOnTop: true,
+            resizable: false,
+        });
+
+        collectionWindow.setMenu(null);
+
+        collectionWindow.loadFile('./views/collection.html');
+
+        collectionWindow.on('closed', () => {
+            collectionWindow = null
+        });
+    }
+});
+
+//Expences window
+let expencesWindow;
+ipcMain.on('expences-window', (event, arg) => {
+    if (arg === 1) {
+        expencesWindow = new BrowserWindow({
+            width: 600,
+            height: 300,
+            parent: mainWin,
+            minimizable: false,
+            maximizable: false,
+            alwaysOnTop: true,
+            resizable: false,
+        });
+
+        expencesWindow.setMenu(null);
+
+        expencesWindow.loadFile('./views/expences.html');
+
+        expencesWindow.on('closed', () => {
+            expencesWindow = null
+        });
+    }
+});
+
+//Staff window
+let staffWindow;
+ipcMain.on('staff-window', (event, arg) => {
+    if (arg === 1) {
+        staffWindow = new BrowserWindow({
+            width: 700,
+            height: 500,
+            parent: mainWin,
+            minimizable: false,
+            maximizable: false,
+            alwaysOnTop: true,
+            resizable: false,
+        });
+
+        staffWindow.setMenu(null);
+
+        staffWindow.loadFile('./views/staff.html');
+
+        staffWindow.on('closed', () => {
+            staffWindow = null
+        });
+    }
+});
