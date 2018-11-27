@@ -93,3 +93,5 @@
 [2018-10-19T18:16:15.172] [ERROR] database - { [Error: SQLITE_ERROR: no such table: categor] errno: 1, code: 'SQLITE_ERROR' }
 [2018-10-19T18:16:46.775] [ERROR] database - Failed to execute : SELECT * FROM category
 [2018-10-19T18:16:46.794] [ERROR] database - { [Error: SQLITE_ERROR: no such table: categor] errno: 1, code: 'SQLITE_ERROR' }
+[2018-11-15T18:07:08.856] [ERROR] database - Failed to execute : SELECT * FROM category
+[2018-11-15T18:07:08.931] [ERROR] database - { Error: SQLITE_ERROR: no such table: categor errno: 1, code: 'SQLITE_ERROR' }
