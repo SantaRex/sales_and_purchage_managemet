@@ -4,6 +4,15 @@ const {
     ipcMain
 } = require('electron')
 
+const mysql = require('mysql');
+var connection = mysql.createConnection({
+  host     : 'localhost',
+  user     : 'root',
+  password : '',
+  database : 'sales'
+});
+
+connection.connect();
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
 let mainWin;
@@ -62,15 +71,17 @@ ipcMain.on('category-window', (event, arg) => {
     if (arg === 1) {
         categoryWindow = new BrowserWindow({
             width: 600,
-            height: 180,
+            height: 280,
             parent: mainWin,
             minimizable: false,
             maximizable: false,
             alwaysOnTop: true,
-            resizable: false,
+            //resizable: false,
         });
 
         categoryWindow.setMenu(null);
+
+        //categoryWindow.webContents.openDevTools();
 
         categoryWindow.loadFile('./views/categoty.html');
 
@@ -86,7 +97,7 @@ ipcMain.on('sub-category-window', (event, arg) => {
     if (arg === 1) {
         subCatWindow = new BrowserWindow({
             width: 600,
-            height: 260,
+            height: 290,
             parent: mainWin,
             minimizable: false,
             maximizable: false,
@@ -110,7 +121,7 @@ ipcMain.on('item-window', (event, arg) => {
     if (arg === 1) {
         itemWindow = new BrowserWindow({
             width: 700,
-            height: 500,
+            height: 520,
             parent: mainWin,
             minimizable: false,
             maximizable: false,
@@ -143,6 +154,8 @@ ipcMain.on('stock-window', (event, arg) => {
         });
 
         stockWindow.setMenu(null);
+        stockWindow.webContents.openDevTools();
+
 
         stockWindow.loadFile('./views/stock.html');
 
@@ -206,7 +219,7 @@ ipcMain.on('staff-window', (event, arg) => {
     if (arg === 1) {
         staffWindow = new BrowserWindow({
             width: 700,
-            height: 500,
+            height: 750,
             parent: mainWin,
             minimizable: false,
             maximizable: false,
@@ -223,3 +236,16 @@ ipcMain.on('staff-window', (event, arg) => {
         });
     }
 });
+//category
+ipcMain.on('cat-data', (event, arg) => {
+   // console.log(arg);
+    let sql = "INSERT INTO category (name) VALUES ("+"'"+arg+"'"+")";
+    //console.log(sql);
+    connection.query(sql, function (error, results, fields) {
+        if (error) throw error;
+        event.sender.send('category-inserted', 1);
+    });
+
+})
+
+//stock
