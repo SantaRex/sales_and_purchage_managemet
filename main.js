@@ -4,15 +4,6 @@ const {
     ipcMain
 } = require('electron')
 
-const mysql = require('mysql');
-var connection = mysql.createConnection({
-  host     : 'localhost',
-  user     : 'root',
-  password : '',
-  database : 'sales'
-});
-
-connection.connect();
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
 let mainWin;
@@ -108,6 +99,7 @@ ipcMain.on('sub-category-window', (event, arg) => {
         subCatWindow.setMenu(null);
 
         subCatWindow.loadFile('./views/sub-category.html');
+        subCatWindow.webContents.openDevTools();
 
         subCatWindow.on('closed', () => {
             subCatWindow = null
@@ -236,7 +228,7 @@ ipcMain.on('staff-window', (event, arg) => {
         });
     }
 });
-//category
+/*//category
 ipcMain.on('cat-data', (event, arg) => {
    // console.log(arg);
     let sql = "INSERT INTO category (name) VALUES ("+"'"+arg+"'"+")";
@@ -247,5 +239,5 @@ ipcMain.on('cat-data', (event, arg) => {
     });
 
 })
-
+*/
 //stock
