@@ -62,7 +62,7 @@ ipcMain.on('category-window', (event, arg) => {
     if (arg === 1) {
         categoryWindow = new BrowserWindow({
             width: 600,
-            height: 280,
+            height: 220,
             parent: mainWin,
             minimizable: false,
             maximizable: false,
@@ -88,7 +88,7 @@ ipcMain.on('sub-category-window', (event, arg) => {
     if (arg === 1) {
         subCatWindow = new BrowserWindow({
             width: 600,
-            height: 290,
+            height: 280,
             parent: mainWin,
             minimizable: false,
             maximizable: false,
@@ -99,7 +99,7 @@ ipcMain.on('sub-category-window', (event, arg) => {
         subCatWindow.setMenu(null);
 
         subCatWindow.loadFile('./views/sub-category.html');
-        subCatWindow.webContents.openDevTools();
+       // subCatWindow.webContents.openDevTools();
 
         subCatWindow.on('closed', () => {
             subCatWindow = null

@@ -14,10 +14,13 @@ connection.connect();
 catForm.addEventListener('submit', (event) => {
 	event.preventDefault();
 	let category = catInput.value;
-    let sql = "INSERT INTO category (name) VALUES ("+"'"+category+"'"+")";
+    let sql = `INSERT INTO category (name) VALUES ('${category}')`;
     connection.query(sql, function (error, results, fields) {
-        if (error) throw error;
-		dialog.showMessageBox({message: 'Category inserted successfully',  buttons: ["OK", "Close"] });
+        if (error){
+            dialog.showErrorBox(null,{message: 'Category inserted failed',  buttons: ["OK", "Close"] });
+        } else{
+            dialog.showMessageBox(null,{message: 'Category inserted successfully',  buttons: ["OK", "Close"] });
+        }
     });
 
 })

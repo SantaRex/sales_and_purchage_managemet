@@ -12,6 +12,7 @@ var connection = mysql.createConnection({
 connection.connect();
 
 var categoryDropDown = document.querySelector('#category');
+var subCategoryInput = document.querySelector('#sub-category');
 var subCatForm = document.querySelector('#subCatForm');
 let sql = "SELECT id, name FROM category";
 connection.query(sql, function (error, results, fields) {
@@ -20,17 +21,19 @@ connection.query(sql, function (error, results, fields) {
     for(let i =0; i< results.length; i++){
         let option = '<option value="'+results[i].id+'">'+results[i].name+'</option>';
         console.log(option);
-        categoryDropDown.append(option);
+        categoryDropDown.innerHTML += option;
     }
 });
 
+
 subCatForm.addEventListener('submit', (event) => {
 	event.preventDefault();
-	let category = catInput.value;
-    let sql = "INSERT INTO category (name) VALUES ("+"'"+category+"'"+")";
+    let category = categoryDropDown.value;
+    let subCategory = subCategoryInput.value;
+    let sql = `INSERT INTO subcategory (name,category) VALUES ('${subCategory}', '${category}')`;
     connection.query(sql, function (error, results, fields) {
         if (error) throw error;
-		dialog.showMessageBox({message: 'Category inserted successfully',  buttons: ["OK", "Close"] });
+		dialog.showMessageBox({message: 'Sub Category inserted successfully',  buttons: ["OK", "Close"] });
     });
 
 })
