@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Category Report</title>
+    <title>Staff Report</title>
     <meta name="description" content="A high-quality &amp; free Bootstrap admin dashboard template pack that comes with lots of templates and components.">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
@@ -39,14 +39,23 @@
         <div class="col-lg-12 col-md-12 col-sm-12" >
           
             <div class="col col-lg-8 col-md-12 col-sm-12 col-xs-12 offset-lg-2">
-                <h4 style="margin-top:10px;">Category Report</h4>
+                <h4 style="margin-top:10px;">Staff Report</h4>
                 <table class="table table-hover table-bordered" style="margin-right:10px; margin-top:20px; width: 100%;">
                     <thead>
                       <th>ID</th>
-                      <th>Category Name</th>
+                      <th>Name</th>
+                      <th>DOB</th>
+                      <th>DOJ</th>
+                      <th>Gender</th>
+                      <th>Designation</th>
+                      <th>PO</th>
+                      <th>PS</th>
+                      <th>Mobile</th>
+                      <th>Salary</th>
+                      
                       <th width="20%">Action</th>
                     </thead>
-                    <tbody id="catTableBody">
+                    <tbody id="staffTableBody">
                       
                     </tbody>
                   </table>
@@ -76,28 +85,36 @@
         database : 'sales'
       });
       connection.connect();
-      var catTable = document.querySelector('#catTableBody');
-      let sql = `SELECT * FROM category`;
+      var staffTable = document.querySelector('#staffTableBody');
+      let sql = `SELECT * FROM staff_tbl`;
       connection.query(sql, function (error, results, fields) {
         if (error){
-          dialog.showErrorBox(null,{message: 'Category inserted failed',  buttons: ["OK", "Close"] });
+          dialog.showErrorBox(null,{message: 'sub-Category inserted failed',  buttons: ["OK", "Close"] });
         } else{
           for(let i =0; i< results.length; i++){
             let tr = `<tr> 
                           <td> ${results[i].id}</td>
                           <td> ${results[i].name} </td>
+                           <td> ${results[i].dob}</td>
+                          <td> ${results[i].doj} </td>
+                          <td> ${results[i].gender}</td>
+                          <td> ${results[i].designation}</td>
+                          <td> ${results[i].po}</td>
+                          <td> ${results[i].ps} </td>
+                          <td> ${results[i].mobile}</td>
+                          <td> ${results[i].salary} </td>
                           <td>
                             <a href="" class="btn btn-sm btn-info">Edit</a>
                             <a href="#" class="btn btn-sm btn-danger">Delete</a>
                           </td>
                       </tr>`;
-            catTable.innerHTML += tr;
+            staffTable.innerHTML += tr;
           }
         }
       });
 
       $(document).ready( function () {
-        $('#catTable').DataTable();
+        $('#staffTable').DataTable();
       });
     </script>
   </body>

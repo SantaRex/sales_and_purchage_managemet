@@ -18,7 +18,7 @@
           <div class="main-content-container container-fluid px-4" style="margin-top: 30px;">
             <!--<h6>Enter item details</h6>
             <hr>-->
-                  <form action="">
+                  <form id="itemForm" action="">
 
                     <div class="form-group">
                       <label for="category">Name</label>
@@ -30,18 +30,14 @@
                         <label for="category">Category</label>
                         <select  id="category" class="form-control">
                           <option value="none">--Select category--</option>
-                          <option value="none">Category 1</option>
-                          <option value="none">Category 2</option>
-                          <option value="none">Category 3</option>
+                          
                         </select>
                       </div>
                       <div class="form-group col-md-6 col-sm-6">
                         <label for="sub-category">Sub category</label>
                         <select  id="sub-category" class="form-control">
                           <option value="none">--Select sub category--</option>
-                          <option value="none">Category 1</option>
-                          <option value="none">Category 2</option>
-                          <option value="none">Category 3</option>
+                       
                         </select>
                       </div>
                     </div>
@@ -92,6 +88,8 @@
         </main>
       </div>
     </div>
-    <script src="../renderer/category.js"></script>
+    <script>
+      require('../renderer/item.js');
+    </script>
   </body>
 </html>
