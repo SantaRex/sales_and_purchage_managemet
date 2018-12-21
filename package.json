@@ -4,13 +4,14 @@
   "description": "Sales and purchage management software for wholesale and retail shops",
   "main": "main.js",
   "dependencies": {
-    "electron": "^3.0.0",
     "jest": "^23.6.0",
     "log4js": "^3.0.6",
     "mysql": "^2.16.0",
     "sqlite3": "^4.0.2"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "electron": "^3.0.12"
+  },
   "scripts": {
     "start": "electron .",
     "test": "jest"

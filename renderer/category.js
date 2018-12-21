@@ -6,7 +6,7 @@ const mysql = require('mysql');
 var connection = mysql.createConnection({
   host     : 'localhost',
   user     : 'root',
-  password : 'password',
+  password : '',
   database : 'sales'
 });
 connection.connect();
@@ -17,9 +17,9 @@ catForm.addEventListener('submit', (event) => {
     let sql = `INSERT INTO category (name) VALUES ('${category}')`;
     connection.query(sql, function (error, results, fields) {
         if (error){
-            dialog.showErrorBox(null,{message: 'Category inserted failed',  buttons: ["OK", "Close"] });
+            dialog.showErrorBox(this,{message: 'Category inserted failed',  buttons: ["OK", "Close"] });
         } else{
-            dialog.showMessageBox(null,{message: 'Category inserted successfully',  buttons: ["OK", "Close"] });
+            dialog.showMessageBox(this,{message: 'Category inserted successfully',  buttons: ["OK", "Close"] });
         }
     });
 
